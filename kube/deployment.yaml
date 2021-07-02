@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploymentconversao
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: apiconversao
+  template:
+    metadata:
+      labels:
+        app: apiconversao
+    spec:
+      containers:
+      - name: api
+        image: tatoleokubedev/api-conversao:v1
+        ports:
+          - containerPort: 8080
+
