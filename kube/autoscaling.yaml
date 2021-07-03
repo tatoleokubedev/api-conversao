@@ -3,10 +3,10 @@ kind: HorizontalPodAutoscaler
 metadata:
   name: api-hpa
 spec:
-  maxReplicas: 10
-  minReplicas: 1
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
     name: deploymentconversao
+  minReplicas: 1
+  maxReplicas: 10
   targetCPUUtilizationPercentage: 50
